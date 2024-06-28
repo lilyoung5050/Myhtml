@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button onclick="rockPaperScissor();
+    playerMove('rock')" class="js_btn">rock</button>
+    <button onclick="rockPaperScissor();
+    playerMove('paper')">paper</button>
+    <button onclick="rockPaperScissor();
+    playerMove('rock')">scissor</button>
+    <script>
+      let computerMove = "";
+     function rockPaperScissor() {
+        const mathGame = Math.random();
+        if (mathGame >= 0 && mathGame < 1 / 3) {
+          computerMove = "rock";
+        } else if (mathGame >= 1 / 3 && mathGame < 2 / 3) {
+          computerMove = "paper";
+        } else if (mathGame >= 2 / 3 && mathGame < 1) {
+          computerMove = "scissor";
+        }
+      };
+
+     function playerMove(playerPick) {
+        let result = "";
+        if (playerPick === "rock") {
+          if (computerMove === "rock") {
+            result = "You win";
+          } else if (computerMove === "scissor") {
+            result = "You tie";
+          } else if (computerMove === "paper") {
+            result = "You Loss";
+          }
+          console.log(
+          `you pick rock computer picked ${computerMove} result ${result}`
+        );
+        }
+        else if (playerPick === "paper") {
+          if (computerMove === "rock") {
+            result = "You win";
+          } else if (computerMove === "scissor") {
+            result = "You tie";
+          } else if (computerMove === "paper") {
+            result = "You Loss";
+          }
+          alert(
+          `you pick paper computer picked ${computerMove} result ${result}`
+        );
+        }
+     
+      };
+   
+    </script>
+  </body>
+</html>
